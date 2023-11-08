@@ -1,5 +1,5 @@
 # 答案解读：
-函数位于lab3\kernel\include\object中
+cap_group.c位于lab3\kernel\include\object中
 ## 前置知识
 ### vmspace:
 是操作系统中用于管理进程虚拟内存的概念。
