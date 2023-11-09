@@ -45,6 +45,9 @@ uart_send(ch);
 return uart_recv();
 ```
 
+第1部分调用`uart_send()`函数将输入的字符发送到串行通信接口（UART）进行发送。
+
+第2部分调用`uart_recv()`函数从串行通信接口接收一个字符，并将其作为返回值。
 ## __chcore_sys_putc() u32 __chcore_sys_getc()
 raw_syscall.h位于lab3\libchcore\include\chcore\internal中
 ```
@@ -53,3 +56,6 @@ __chcore_syscall1(__CHCORE_SYS_putc, ch);
 ```
 ret = (u32) __chcore_syscall0(__CHCORE_SYS_getc);
 ```
+第1部分调用`__chcore_syscall1()`系统调用函数，参数为__CHCORE_SYS_putc和字符ch，以实现字符输出到系统。
+
+第2部分调用`__chcore_syscall0()`系统调用函数，传递了一个参数__CHCORE_SYS_getc，并将返回值（表示获取到的字符）赋给ret变量。
