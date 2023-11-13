@@ -6,6 +6,15 @@ cap_group.c位于lab3\kernel\include\object中
 ### cap_group:
 ![image](https://github.com/litterqi/operating-system/assets/123362884/cd0dab43-cc3f-40bc-94d7-bc84deb69db4)
 
+`slot_table`：这是一个内核对象数组，用于存储该进程有权访问的内核对象。每个内核对象在数组中的索引即为该对象的cap（可能是一个整数或其他标识符）。
+
+`thread_list`：这是一个链表的头指针，用于存储从属于该进程的所有线程。通过这个链表，可以追踪和管理与该进程相关联的所有线程。
+
+`thread_cnt`：这是一个整数变量，用于记录从属于该进程的线程数量。
+
+`pid`：这是一个64位无符号整数（u64），表示进程的标识符。
+
+`cap_group_name`：这是一个字符数组，用于存储便于调试使用的进程名称。`MAX_GROUP_NAME_LEN`定义了数组的最大长度。
 ## cap_group_init()
 ```
 slot_table_init(slot_table, size);
